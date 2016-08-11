@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import { View } from 'react-native';
+import { View, TextInput } from 'react-native';
 
 let AddTodo = ({ dispatch }) => {
   let input
@@ -16,7 +16,7 @@ let AddTodo = ({ dispatch }) => {
         dispatch(addTodo(input.value))
         input.value = ''
       }}>
-        <input ref={node => {
+        <TextInput ref={node => {
           input = node
         }} />
         <button type="submit">
