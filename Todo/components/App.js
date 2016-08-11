@@ -2,14 +2,21 @@ import React, { Component } from 'react'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
-import { View, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const App = () => (
-  <View>
+  <View style={styles.todo}>
     <AddTodo />
     <VisibleTodoList />
     <Footer />
   </View>
 )
+
+const styles = StyleSheet.create({
+  todo: {
+    justifyContent: 'center',
+    marginBottom: 5,
+  }
+});
 
 export default App
