@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import { View } from 'react-native';
 
 let AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div>
+    <View>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -22,7 +23,7 @@ let AddTodo = ({ dispatch }) => {
           Add Todo
         </button>
       </form>
-    </div>
+    </View>
   )
 }
 AddTodo = connect()(AddTodo)
