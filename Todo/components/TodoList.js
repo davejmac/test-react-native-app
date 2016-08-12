@@ -1,16 +1,17 @@
 import React, { PropTypes } from 'react'
+import { View } from 'react-native';
 import Todo from './Todo'
 
-const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
+const TodoList = ({ todos, onTodoPress }) => (
+  <View>
     {todos.map(todo =>
       <Todo
         key={todo.id}
         {...todo}
-        onClick={() => onTodoClick(todo.id)}
+        onPress={() => onTodoPress(todo.id)}
       />
     )}
-  </ul>
+  </View>
 )
 
 TodoList.propTypes = {
@@ -19,7 +20,7 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  onTodoPress: PropTypes.func.isRequired
 }
 
 export default TodoList;

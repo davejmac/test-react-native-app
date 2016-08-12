@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react'
+import { View, Text } from 'react-native';
 
 const Todo = ({ onClick, completed, text }) => (
-  <li
+  <View
     onClick={onCLick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
-    {text}
-  </li>
+    <Text>{text}</Text>
+  </View>
 )
 
 Todo.propTypes = {

@@ -1,26 +1,27 @@
 import React, { PropTypes } from 'react'
+import { View, Text } from 'react-native'
 
-const Link = ({ active, children, onClick }) => {
+const Link = ({ active, children, onPress }) => {
   if (active) {
-    return <span>{children}</span>
+    return <View>{children}</View>
   }
 
   return (
-    <a href="#"
-      onClick={e => {
+    <Text
+      onPress={e => {
         e.preventDefault()
-        onClick()
+        onPress()
       }}
     >
       {children}
-    </a>
+    </Text>
   )
 }
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired
 }
 
 export default Link
