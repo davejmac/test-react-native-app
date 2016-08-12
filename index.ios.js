@@ -1,10 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+import Index from './Todo/components/Index'
 import {
   AppRegistry,
   StyleSheet,
@@ -17,14 +12,14 @@ class TDN extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Todo!
         </Text>
+        <View style={styles.todo}>
+          <Index />
+        </View>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          Double tap R on your keyboard to reload,{'\n'}
+          Shake or press menu button for dev menu
         </Text>
       </View>
     );
@@ -43,11 +38,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
+  todo: {
+    justifyContent: 'center',
     marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('TDN', () => TDN);
